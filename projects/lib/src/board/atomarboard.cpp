@@ -71,7 +71,7 @@ bool AtomarBoard::vSetFenString(const QStringList& fen)
 	return WesternBoard::vSetFenString(fen);
 }
 
-bool AtomarBoard::inCheck(Side side, int square) const
+bool AtomarBoard::inCheck(Side, int) const
 {
     return false;
 }

@@ -46,6 +46,7 @@
 #include "giveawayboard.h"
 #include "gothicboard.h"
 #include "grandboard.h"
+#include "grasshopperboard.h"
 #include "gridboard.h"
 #include "gryphonboard.h"
 #include "gustavboard.h"
@@ -64,6 +65,7 @@
 #include "makrukboard.h"
 #include "minishogiboard.h"
 #include "modernboard.h"
+#include "nightriderboard.h"
 #include "oukboard.h"
 #include "placementboard.h"
 #include "pocketknightboard.h"
@@ -119,6 +121,7 @@ REGISTER_BOARD(GomokuFreestyleBoard, "gomokufreestyle")
 REGISTER_BOARD(GomokuBoard, "gomoku")
 REGISTER_BOARD(GothicBoard, "gothic")
 REGISTER_BOARD(GrandBoard, "grand")
+REGISTER_BOARD(GrasshopperBoard,"grasshopper")
 REGISTER_BOARD(GridBoard, "grid")
 REGISTER_BOARD(BerolinaGridBoard, "gridolina")
 REGISTER_BOARD(GryphonBoard, "gryphon")
@@ -139,6 +142,7 @@ REGISTER_BOARD(MakrukBoard, "makruk")
 REGISTER_BOARD(MiniShogiBoard, "minishogi")
 REGISTER_BOARD(ModernBoard, "modern")
 REGISTER_BOARD(NewZealandBoard, "newzealand")
+REGISTER_BOARD(NightriderBoard, "nightrider")
 REGISTER_BOARD(PlacementBoard, "placement")
 REGISTER_BOARD(PocketKnightBoard, "pocketknight")
 REGISTER_BOARD(RacingKingsBoard, "racingkings")
