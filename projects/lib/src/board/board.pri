@@ -7,6 +7,7 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/nightriderboard.cpp \
     $$PWD/ordaboard.cpp \
     $$PWD/ordamirrorboard.cpp \
+    $$PWD/pawnbackboard.cpp \
     $$PWD/pawnsidewaysboard.cpp \
     $$PWD/shinobiboard.cpp \
     $$PWD/stalematewinboard.cpp \
@@ -88,6 +89,7 @@ HEADERS += $$PWD/board.h \
     $$PWD/nightriderboard.h \
     $$PWD/ordaboard.h \
     $$PWD/ordamirrorboard.h \
+    $$PWD/pawnbackboard.h \
     $$PWD/pawnsidewaysboard.h \
     $$PWD/piece.h \
     $$PWD/shinobiboard.h \
