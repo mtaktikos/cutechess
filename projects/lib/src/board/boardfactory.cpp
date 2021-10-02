@@ -29,6 +29,7 @@
 #include "capablancaboard.h"
 #include "caparandomboard.h"
 #include "chancellorboard.h"
+#include "chaturangaboard.h"
 #include "checklessboard.h"
 #include "chessgiboard.h"
 #include "chigorinboard.h"
@@ -97,6 +98,7 @@ REGISTER_BOARD(CaparandomBoard, "caparandom")
 REGISTER_BOARD(ConnectBoard, "cfour")
 REGISTER_BOARD(ChancellorBoard, "chancellor")
 REGISTER_BOARD(ChangeOverBoard, "changeover")
+REGISTER_BOARD(ChaturangaBoard, "chaturanga")
 REGISTER_BOARD(ChecklessBoard, "checkless")
 REGISTER_BOARD(ChessgiBoard, "chessgi")
 REGISTER_BOARD(ChigorinBoard, "chigorin")
