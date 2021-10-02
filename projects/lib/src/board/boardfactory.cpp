@@ -80,6 +80,7 @@
 #include "shogiboard.h"
 #include "sittuyinboard.h"
 #include "standardboard.h"
+#include "stalematewinboard.h"
 #include "suicideboard.h"
 #include "threekingsboard.h"
 #include "twokingseachboard.h"
@@ -160,6 +161,7 @@ REGISTER_BOARD(ShinobiBoard, "shinobi")
 REGISTER_BOARD(ShogiBoard, "shogi")
 REGISTER_BOARD(ShootBoard, "shoot")
 REGISTER_BOARD(SimplifiedGryphonBoard, "simplifiedgryphon")
+REGISTER_BOARD(stalematewinBoard, "stalematewin")
 REGISTER_BOARD(SittuyinBoard, "sittuyin")
 REGISTER_BOARD(SlippedGridBoard, "slippedgrid")
 REGISTER_BOARD(StandardBoard, "standard")
