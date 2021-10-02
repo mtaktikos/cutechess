@@ -83,6 +83,7 @@
 #include "sittuyinboard.h"
 #include "standardboard.h"
 #include "stalematewinboard.h"
+#include "synoboard.h"
 #include "suicideboard.h"
 #include "threekingsboard.h"
 #include "twokingseachboard.h"
@@ -171,6 +172,7 @@ REGISTER_BOARD(SlippedGridBoard, "slippedgrid")
 REGISTER_BOARD(StandardBoard, "standard")
 REGISTER_BOARD(SuicideBoard, "suicide")
 REGISTER_BOARD(SuperAndernachBoard, "superandernach")
+REGISTER_BOARD(SynoBoard, "synochess")
 REGISTER_BOARD(ThreeKingsBoard, "threekings")
 REGISTER_BOARD(TicTacToeBoard, "tictactoe")
 REGISTER_BOARD(TwoKingsEachBoard, "twokings")
