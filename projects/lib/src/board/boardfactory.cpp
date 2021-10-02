@@ -70,6 +70,7 @@
 #include "ordaboard.h"
 #include "ordamirrorboard.h"
 #include "oukboard.h"
+#include "pawnsidewaysboard.h"
 #include "placementboard.h"
 #include "pocketknightboard.h"
 #include "racingkingsboard.h"
@@ -151,6 +152,7 @@ REGISTER_BOARD(NewZealandBoard, "newzealand")
 REGISTER_BOARD(NightriderBoard, "nightrider")
 REGISTER_BOARD(OrdaBoard, "orda")
 REGISTER_BOARD(OrdamirrorBoard,"ordamirror")
+REGISTER_BOARD(PawnsidewaysBoard, "pawnsideways")
 REGISTER_BOARD(PlacementBoard, "placement")
 REGISTER_BOARD(PocketKnightBoard, "pocketknight")
 REGISTER_BOARD(RacingKingsBoard, "racingkings")
