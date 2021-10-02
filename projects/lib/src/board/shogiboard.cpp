@@ -34,21 +34,23 @@ ShogiBoard::ShogiBoard()
 	m_hasImpassePointRule(false),
 	m_history()
 {
-	setPieceType(Pawn, tr("pawn"), "P");
-	setPieceType(Lance, tr("lance"), "L", LanceMovement, "M");
-	setPieceType(Knight, tr("knight"), "N", KnightMovement);
-	setPieceType(SilverGeneral, tr("silver"), "S", SilverMovement, "E");
-	setPieceType(GoldGeneral, tr("gold"), "G", GoldMovement, "W");
-	setPieceType(Bishop, tr("bishop"), "B", BishopMovement);
-	setPieceType(Rook, tr("rook"), "R", RookMovement);
-	setPieceType(King, tr("king"), "K");
+    setPieceType(Pawn, tr("pawn"), "P");
+    setPieceGraphics(Pawn, "SHOGIP");
+    setPieceType(Lance, tr("lance"), "L", LanceMovement, "SHOGIL");
+    setPieceType(Knight, tr("knight"), "N", KnightMovement, "SHOGIN");
+    setPieceType(SilverGeneral, tr("silver"), "S", SilverMovement, "SHOGIS");
+    setPieceType(GoldGeneral, tr("gold"), "G", GoldMovement, "SHOGIG");
+    setPieceType(Bishop, tr("bishop"), "B", BishopMovement, "SHOGIB");
+    setPieceType(Rook, tr("rook"), "R", RookMovement, "SHOGIR");
+    setPieceType(King, tr("king"), "K");
+    setPieceGraphics(King, "SHOGIK");
 
-	setPieceType(PromotedPawn, tr("tokin"), "+P", GoldMovement, "W");
-	setPieceType(PromotedLance, tr("promoted lance"), "+L", GoldMovement, "W");
-	setPieceType(PromotedKnight, tr("promoted knight"), "+N", GoldMovement, "N~");
-	setPieceType(PromotedSilver, tr("promoted silver"), "+S", GoldMovement, "W");
-	setPieceType(PromotedBishop, tr("horse"), "+B", BishopMovement | WazirMovement, "B~");
-	setPieceType(PromotedRook, tr("dragon"), "+R", RookMovement | FerzMovement, "R~");
+    setPieceType(PromotedPawn, tr("tokin"), "+P", GoldMovement, "SHOGIPP");
+    setPieceType(PromotedLance, tr("promoted lance"), "+L", GoldMovement, "SHOGIPL");
+    setPieceType(PromotedKnight, tr("promoted knight"), "+N", GoldMovement, "SHOGIPN");
+    setPieceType(PromotedSilver, tr("promoted silver"), "+S", GoldMovement, "SHOGIPS");
+    setPieceType(PromotedBishop, tr("horse"), "+B", BishopMovement | WazirMovement, "SHOGIPB");
+    setPieceType(PromotedRook, tr("dragon"), "+R", RookMovement | FerzMovement, "SHOGIPR");
 }
 
 Board* ShogiBoard::copy() const

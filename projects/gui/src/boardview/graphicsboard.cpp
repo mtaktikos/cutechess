@@ -52,6 +52,7 @@ class TargetHighlights : public QGraphicsObject
 
 GraphicsBoard::GraphicsBoard(int files,
 			     int ranks,
+                 QString variant,
 			     qreal squareSize,
 			     QGraphicsItem* parent)
 	: QGraphicsItem(parent),
@@ -64,6 +65,7 @@ GraphicsBoard::GraphicsBoard(int files,
 	  m_wallColor(QColor(0xee,0xee,0xee)),
 	  m_squares(files * ranks),
 	  m_highlightAnim(nullptr),
+      m_variant(variant),
 	  m_flipped(false)
 {
 	Q_ASSERT(files > 0);
@@ -97,68 +99,155 @@ void GraphicsBoard::paint(QPainter* painter,
 			  const QStyleOptionGraphicsItem* option,
 			  QWidget* widget)
 {
-	Q_UNUSED(option);
-	Q_UNUSED(widget);
+    if (m_variant == "shogi") {
 
-	QRectF rect(m_rect.topLeft(), QSizeF(m_squareSize, m_squareSize));
-	const qreal rLeft = rect.left();
+        paintShogiBoard(painter,option,widget);
 
-	// paint squares
-	for (int y = 0; y < m_ranks; y++)
-	{
-		rect.moveLeft(rLeft);
-		for (int x = 0; x < m_files; x++)
-		{
-			// referenced board coordinates
-			int file = m_flipped ? m_files - 1 - x : x;
-			int rank = m_flipped ? y : m_ranks - 1 - y;
-			Chess::Square sq(file, rank);
+    }
+    else {
+        paintChessBoard(painter, option, widget); //idea taken from https://github.com/gaintpd/cutechess
+    }
+}
 
-			if (pieceTypeAt(sq).isWall())
-				painter->fillRect(rect, m_wallColor);
-			else if ((x % 2) == (y % 2))
-				painter->fillRect(rect, m_lightColor);
-			else
-				painter->fillRect(rect, m_darkColor);
-			rect.moveLeft(rect.left() + m_squareSize);
-		}
-		rect.moveTop(rect.top() + m_squareSize);
-	}
+void GraphicsBoard::paintShogiBoard(QPainter* painter,
+              const QStyleOptionGraphicsItem* option,
+              QWidget* widget)
+{
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
 
-	auto font = painter->font();
-	font.setPointSizeF(font.pointSizeF() * 0.7);
-	painter->setFont(font);
-	painter->setPen(m_textColor);
+    QPen pen(Qt::SolidLine);
+    pen.setWidth(3);
+    pen.setColor(Qt::black);
+    painter->setPen(pen);
+    QRectF rect(m_rect.topLeft(), QSizeF(m_squareSize, m_squareSize));
+    const qreal rLeft = rect.left();
 
-	// paint file coordinates
-	const QString alphabet = "abcdefghijklmnopqrstuvwxyz";
-	for (int i = 0; i < m_files; i++)
-	{
-		const qreal tops[] = {m_rect.top() - m_coordSize,
-		                      m_rect.bottom()};
-		for (const auto top : tops)
-		{
-			rect = QRectF(m_rect.left() + (m_squareSize * i), top,
-			              m_squareSize, m_coordSize);
-			int file = m_flipped ? m_files - i - 1 : i;
-			painter->drawText(rect, Qt::AlignCenter, alphabet[file]);
-		}
-	}
+    // paint squares
+    for (int y = 0; y < m_ranks; y++)
+    {
+        rect.moveLeft(rLeft);
+        for (int x = 0; x < m_files; x++)
+        {
+            // referenced board coordinates
+            int file = m_flipped ? m_files - 1 - x : x;
+            int rank = m_flipped ? y : m_ranks - 1 - y;
+            Chess::Square sq(file, rank);
 
-	// paint rank coordinates
-	for (int i = 0; i < m_ranks; i++)
-	{
-		const qreal lefts[] = {m_rect.left() - m_coordSize,
-		                       m_rect.right()};
-		for (const auto left : lefts)
-		{
-			rect = QRectF(left, m_rect.top() + (m_squareSize * i),
-			              m_coordSize, m_squareSize);
-			int rank = m_flipped ? i + 1 : m_ranks - i;
-			const auto num = QString::number(rank);
-			painter->drawText(rect, Qt::AlignCenter, num);
-		}
-	}
+            if (pieceTypeAt(sq).isWall())
+                painter->fillRect(rect, m_wallColor);
+            else {
+
+                painter->drawRect(rect);
+                painter->fillRect(rect, QColor(253, 215, 117));
+            }
+            rect.moveLeft(rect.left() + m_squareSize);
+        }
+        rect.moveTop(rect.top() + m_squareSize);
+    }
+
+    auto font = painter->font();
+    font.setPointSizeF(font.pointSizeF() * 0.7);
+    painter->setFont(font);
+    painter->setPen(m_textColor);
+
+    // paint file coordinates
+    for (int i = 0; i < m_files; i++)
+    {
+        const qreal tops[] = {m_rect.top() - m_coordSize,
+                              m_rect.bottom()};
+        for (const auto top : tops)
+        {
+            rect = QRectF(m_rect.left() + (m_squareSize * i), top,
+                          m_squareSize, m_coordSize);
+            int file = m_flipped ? i + 1 : m_files - i;
+            const auto num = QString::number(file);
+            painter->drawText(rect, Qt::AlignCenter, num);
+        }
+    }
+
+    // paint rank coordinates
+    for (int i = 0; i < m_ranks; i++)
+    {
+        const qreal lefts[] = {m_rect.left() - m_coordSize,
+                               m_rect.right()};
+        for (const auto left : lefts)
+        {
+            rect = QRectF(left, m_rect.top() + (m_squareSize * i),
+                          m_coordSize, m_squareSize);
+            int rank = m_flipped ? i + 1 : m_ranks - i;
+            const auto num = QString::number(rank);
+            painter->drawText(rect, Qt::AlignCenter, num);
+        }
+    }
+}
+
+void GraphicsBoard::paintChessBoard(QPainter* painter,
+              const QStyleOptionGraphicsItem* option,
+              QWidget* widget)
+{
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
+
+    QRectF rect(m_rect.topLeft(), QSizeF(m_squareSize, m_squareSize));
+    const qreal rLeft = rect.left();
+
+    // paint squares
+    for (int y = 0; y < m_ranks; y++)
+    {
+        rect.moveLeft(rLeft);
+        for (int x = 0; x < m_files; x++)
+        {
+            // referenced board coordinates
+            int file = m_flipped ? m_files - 1 - x : x;
+            int rank = m_flipped ? y : m_ranks - 1 - y;
+            Chess::Square sq(file, rank);
+
+            if (pieceTypeAt(sq).isWall())
+                painter->fillRect(rect, m_wallColor);
+            else if ((x % 2) == (y % 2))
+                painter->fillRect(rect, m_lightColor);
+            else
+                painter->fillRect(rect, m_darkColor);
+            rect.moveLeft(rect.left() + m_squareSize);
+        }
+        rect.moveTop(rect.top() + m_squareSize);
+    }
+
+    auto font = painter->font();
+    font.setPointSizeF(font.pointSizeF() * 0.7);
+    painter->setFont(font);
+    painter->setPen(m_textColor);
+
+    // paint file coordinates
+    const QString alphabet = "abcdefghijklmnopqrstuvwxyz";
+    for (int i = 0; i < m_files; i++)
+    {
+        const qreal tops[] = {m_rect.top() - m_coordSize,
+                              m_rect.bottom()};
+        for (const auto top : tops)
+        {
+            rect = QRectF(m_rect.left() + (m_squareSize * i), top,
+                          m_squareSize, m_coordSize);
+            int file = m_flipped ? m_files - i - 1 : i;
+            painter->drawText(rect, Qt::AlignCenter, alphabet[file]);
+        }
+    }
+
+    // paint rank coordinates
+    for (int i = 0; i < m_ranks; i++)
+    {
+        const qreal lefts[] = {m_rect.left() - m_coordSize,
+                               m_rect.right()};
+        for (const auto left : lefts)
+        {
+            rect = QRectF(left, m_rect.top() + (m_squareSize * i),
+                          m_coordSize, m_squareSize);
+            int rank = m_flipped ? i + 1 : m_ranks - i;
+            const auto num = QString::number(rank);
+            painter->drawText(rect, Qt::AlignCenter, num);
+        }
+    }
 }
 
 Chess::Square GraphicsBoard::squareAt(const QPointF& point) const

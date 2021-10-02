@@ -96,6 +96,7 @@ void BoardScene::populate()
 
 	m_squares = new GraphicsBoard(m_board->width(),
 				      m_board->height(),
+                      m_board->variant(),
 				      s_squareSize);
 	addItem(m_squares);
 
@@ -111,7 +112,7 @@ void BoardScene::populate()
 		{
 			int count = m_board->reserveCount(piece);
 			for (int i = 0; i < count; i++)
-				m_reserve->addPiece(createPiece(piece));
+                m_reserve->addPiece(createPiece(piece,m_board->variant(),m_squares->isFlipped()));
 		}
 	}
 
@@ -122,7 +123,7 @@ void BoardScene::populate()
 		for (int y = 0; y < m_board->height(); y++)
 		{
 			Chess::Square sq(x, y);
-			GraphicsPiece* piece(createPiece(m_board->pieceAt(sq)));
+            GraphicsPiece* piece(createPiece(m_board->pieceAt(sq), m_board->variant(), m_squares->isFlipped()));
 
 			if (piece != nullptr)
 				m_squares->setSquare(sq, piece);
@@ -313,7 +314,7 @@ void BoardScene::onTransitionFinished()
 	{
 		Chess::Piece type = m_board->pieceAt(square);
 		if (type != m_squares->pieceTypeAt(square))
-			m_squares->setSquare(square, createPiece(type));
+            m_squares->setSquare(square, createPiece(type, m_board->variant(), m_squares->isFlipped()));
 	}
 
 	const auto reserve = m_transition.reserve();
@@ -324,7 +325,7 @@ void BoardScene::onTransitionFinished()
 
 		while (newCount > count)
 		{
-			m_reserve->addPiece(createPiece(piece));
+            m_reserve->addPiece(createPiece(piece, m_board->variant(), m_squares->isFlipped()));
 			count++;
 		}
 		while (newCount < count)
@@ -412,7 +413,7 @@ GraphicsPiece* BoardScene::pieceAt(const QPointF& pos) const
 	return nullptr;
 }
 
-GraphicsPiece* BoardScene::createPiece(const Chess::Piece& piece)
+GraphicsPiece* BoardScene::createPiece(const Chess::Piece& piece, QString variant, bool flipped)
 {
 	Q_ASSERT(m_board != nullptr);
 	Q_ASSERT(m_renderer != nullptr);
@@ -421,10 +422,12 @@ GraphicsPiece* BoardScene::createPiece(const Chess::Piece& piece)
 	if (!piece.isValid() && !piece.isWall())
 		return nullptr;
 
+    bool rotated = (((variant == "shogi") || (variant == "torishogi")) && (flipped));
+    //bool rotated = true;
 	return new GraphicsPiece(piece,
 				 s_squareSize,
 				 m_board->representation(piece),
-				 m_renderer);
+                 m_renderer,nullptr,rotated);
 }
 
 QPropertyAnimation* BoardScene::pieceAnimation(GraphicsPiece* piece,
@@ -514,7 +517,7 @@ void BoardScene::selectPiece(const QList<Chess::Piece>& types,
 {
 	QList<GraphicsPiece*> list;
 	for (const auto& type : types)
-		list << createPiece(type);
+        list << createPiece(type, m_board->variant(), m_squares->isFlipped());
 
 	m_chooser = new PieceChooser(list, s_squareSize);
 	connect(m_chooser, SIGNAL(pieceChosen(Chess::Piece)), this, member);
@@ -582,7 +585,7 @@ void BoardScene::applyTransition(const Chess::BoardTransition& transition,
 		GraphicsPiece* piece = m_squares->pieceAt(source);
 		if (piece == nullptr)
 		{
-			piece = createPiece(m_board->pieceAt(target));
+            piece = createPiece(m_board->pieceAt(target), m_board->variant(), m_squares->isFlipped());
 			m_squares->setSquare(source, piece);
 		}
 		group->addAnimation(pieceAnimation(piece, squarePos(target)));

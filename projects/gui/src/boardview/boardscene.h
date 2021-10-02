@@ -132,7 +132,7 @@ class BoardScene : public QGraphicsScene
 
 		QPointF squarePos(const Chess::Square& square) const;
 		GraphicsPiece* pieceAt(const QPointF& pos) const;
-		GraphicsPiece* createPiece(const Chess::Piece& piece);
+        GraphicsPiece* createPiece(const Chess::Piece& piece, QString variant, bool flipped);
 		QPropertyAnimation* pieceAnimation(GraphicsPiece* piece,
 						   const QPointF& endPoint) const;
 		void stopAnimation();

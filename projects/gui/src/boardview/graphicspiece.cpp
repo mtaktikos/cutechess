@@ -17,6 +17,7 @@
 */
 
 #include "graphicspiece.h"
+#include "qpainter.h"
 #include <QSvgRenderer>
 
 
@@ -24,14 +25,16 @@ GraphicsPiece::GraphicsPiece(const Chess::Piece& piece,
 			     qreal squareSize,
 			     const QString& elementId,
 			     QSvgRenderer* renderer,
-			     QGraphicsItem* parent)
+                 QGraphicsItem* parent,
+                 bool rotated)
 	: QGraphicsObject(parent),
 	  m_piece(piece),
 	  m_rect(-squareSize / 2, -squareSize / 2,
 		  squareSize, squareSize),
 	  m_elementId(elementId),
 	  m_renderer(renderer),
-	  m_container(nullptr)
+      m_container(nullptr),
+      m_rotated(rotated)
 {
 	setAcceptedMouseButtons(Qt::LeftButton);
 	setCacheMode(DeviceCoordinateCache);
@@ -68,9 +71,11 @@ void GraphicsPiece::paint(QPainter* painter,
 		bounds.setHeight(width);
 		bounds.setWidth(width * ar);
 	}
-	bounds.moveCenter(m_rect.center());
-
-	m_renderer->render(painter, m_elementId, bounds);
+    bounds.moveCenter(m_rect.center());
+    if (m_rotated) {
+        painter->rotate(180);
+    }
+    m_renderer->render(painter, m_elementId, bounds);
 }
 
 Chess::Piece GraphicsPiece::pieceType() const

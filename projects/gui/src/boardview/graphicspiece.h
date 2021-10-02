@@ -50,11 +50,12 @@ class GraphicsPiece : public QGraphicsObject
 		 * \a elementId is the XML ID of the piece picture which is
 		 * rendered by \a renderer.
 		 */
-		GraphicsPiece(const Chess::Piece& piece,
-			      qreal squareSize,
-			      const QString& elementId,
-			      QSvgRenderer* renderer,
-			      QGraphicsItem* parent = nullptr);
+        GraphicsPiece(const Chess::Piece& piece,
+                  qreal squareSize,
+                  const QString& elementId,
+                  QSvgRenderer* renderer,
+                  QGraphicsItem* parent = nullptr,
+                  bool rotated=false);
 
 		// Inherited from QGraphicsObject
 		virtual int type() const;
@@ -93,6 +94,7 @@ class GraphicsPiece : public QGraphicsObject
 		QString m_elementId;
 		QSvgRenderer* m_renderer;
 		QGraphicsItem* m_container;
+        bool m_rotated;
 };
 
 #endif // GRAPHICSPIECE_H

@@ -121,10 +121,10 @@ void GameWallWidget::setGame(ChessGame* game)
 	}
 
 	m_scene->setBoard(game->pgn()->createBoard());
-	m_scene->populate();
+    if (game->boardShouldBeFlipped())
+        m_scene->flip();
+    m_scene->populate();
 
-	if (game->boardShouldBeFlipped())
-		m_scene->flip();
 
 	for (const Chess::Move& move : game->moves())
 		m_scene->makeMove(move);

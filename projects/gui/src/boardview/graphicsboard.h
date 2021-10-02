@@ -48,10 +48,10 @@ class GraphicsBoard : public QGraphicsItem
 		 * ranks/rows, and the squares' width and height will be
 		 * \a squareSize.
 		 */
-		explicit GraphicsBoard(int files,
-				       int ranks,
-				       qreal squareSize,
-				       QGraphicsItem* parent = nullptr);
+        explicit GraphicsBoard(int files,
+                       int ranks, QString variant,
+                       qreal squareSize,
+                       QGraphicsItem* parent = nullptr);
 		/*! Destroys the GraphicsBoard object. */
 		virtual ~GraphicsBoard();
 
@@ -61,6 +61,12 @@ class GraphicsBoard : public QGraphicsItem
 		virtual void paint(QPainter* painter,
 				   const QStyleOptionGraphicsItem* option,
 				   QWidget* widget = nullptr);
+        virtual void paintChessBoard(QPainter* painter,
+                      const QStyleOptionGraphicsItem* option,
+                      QWidget* widget);
+        virtual void paintShogiBoard(QPainter* painter,
+                      const QStyleOptionGraphicsItem* option,
+                      QWidget* widget);
 
 		/*!
 		 * Returns the chess square at \a point.
@@ -148,6 +154,7 @@ class GraphicsBoard : public QGraphicsItem
 		QColor m_textColor;
 		QVector<GraphicsPiece*> m_squares;
 		QPropertyAnimation* m_highlightAnim;
+        QString m_variant;
 		bool m_flipped;
 };
 

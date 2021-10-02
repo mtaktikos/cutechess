@@ -154,6 +154,13 @@ void Board::setPieceType(int type,
 	m_pieceData[type] = data;
 }
 
+void Board::setPieceGraphics(int type,
+             const QString& gsymbol)
+{
+    m_pieceData[type].representation = gsymbol;
+}
+
+
 QString Board::pieceSymbol(Piece piece) const
 {
 	int type = piece.type();
