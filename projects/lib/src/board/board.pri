@@ -4,6 +4,8 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/chaturangaboard.cpp \
     $$PWD/grasshopperboard.cpp \
     $$PWD/nightriderboard.cpp \
+    $$PWD/ordaboard.cpp \
+    $$PWD/ordamirrorboard.cpp \
     $$PWD/westernboard.cpp \
     $$PWD/square.cpp \
     $$PWD/standardboard.cpp \
@@ -79,6 +81,8 @@ HEADERS += $$PWD/board.h \
     $$PWD/grasshopperboard.h \
     $$PWD/move.h \
     $$PWD/nightriderboard.h \
+    $$PWD/ordaboard.h \
+    $$PWD/ordamirrorboard.h \
     $$PWD/piece.h \
     $$PWD/westernboard.h \
     $$PWD/square.h \
