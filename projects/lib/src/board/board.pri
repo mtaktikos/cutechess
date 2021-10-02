@@ -1,5 +1,6 @@
 DEPENDPATH += $$PWD
 SOURCES += $$PWD/board.cpp \
+    $$PWD/atomarboard.cpp \
     $$PWD/westernboard.cpp \
     $$PWD/square.cpp \
     $$PWD/standardboard.cpp \
@@ -70,6 +71,7 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/boardtransition.cpp \
     $$PWD/syzygytablebase.cpp
 HEADERS += $$PWD/board.h \
+    $$PWD/atomarboard.h \
     $$PWD/move.h \
     $$PWD/piece.h \
     $$PWD/westernboard.h \

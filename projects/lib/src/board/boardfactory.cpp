@@ -23,6 +23,7 @@
 #include "andernachboard.h"
 #include "antiboard.h"
 #include "aseanboard.h"
+#include "atomarboard.h"
 #include "atomicboard.h"
 #include "berolinaboard.h"
 #include "capablancaboard.h"
@@ -87,6 +88,7 @@ REGISTER_BOARD(AndernachBoard, "andernach")
 REGISTER_BOARD(AntiAndernachBoard, "antiandernach")
 REGISTER_BOARD(AntiBoard, "antichess")
 REGISTER_BOARD(AseanBoard, "asean")
+REGISTER_BOARD(AtomarBoard, "atomar")
 REGISTER_BOARD(AtomicBoard, "atomic")
 REGISTER_BOARD(BerolinaBoard, "berolina")
 REGISTER_BOARD(OukBoard, "cambodian")
