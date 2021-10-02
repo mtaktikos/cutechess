@@ -40,6 +40,7 @@
 #include "crazyhouseboard.h"
 #include "dobutsushogiboard.h"
 #include "embassyboard.h"
+#include "empireboard.h"
 #include "euroshogiboard.h"
 #include "extinctionboard.h"
 #include "frcboard.h"
@@ -115,6 +116,7 @@ REGISTER_BOARD(CrazyhouseBoard, "crazyhouse")
 REGISTER_BOARD(DisplacedGridBoard, "displacedgrid")
 REGISTER_BOARD(DobutsuShogiBoard, "dobutsu")
 REGISTER_BOARD(EmbassyBoard, "embassy")
+REGISTER_BOARD(EmpireBoard, "empire")
 REGISTER_BOARD(EuroShogiBoard, "euroshogi")
 REGISTER_BOARD(ExtinctionBoard, "extinction")
 REGISTER_BOARD(KingletBoard, "kinglet")

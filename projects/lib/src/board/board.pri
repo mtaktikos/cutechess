@@ -2,6 +2,7 @@ DEPENDPATH += $$PWD
 SOURCES += $$PWD/board.cpp \
     $$PWD/atomarboard.cpp \
     $$PWD/chaturangaboard.cpp \
+    $$PWD/empireboard.cpp \
     $$PWD/grasshopperboard.cpp \
     $$PWD/nightriderboard.cpp \
     $$PWD/ordaboard.cpp \
@@ -79,6 +80,7 @@ SOURCES += $$PWD/board.cpp \
 HEADERS += $$PWD/board.h \
     $$PWD/atomarboard.h \
     $$PWD/chaturangaboard.h \
+    $$PWD/empireboard.h \
     $$PWD/grasshopperboard.h \
     $$PWD/move.h \
     $$PWD/nightriderboard.h \
