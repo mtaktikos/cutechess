@@ -9,9 +9,11 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/ordamirrorboard.cpp \
     $$PWD/pawnbackboard.cpp \
     $$PWD/pawnsidewaysboard.cpp \
+    $$PWD/pawnsinglestepboard.cpp \
     $$PWD/shinobiboard.cpp \
     $$PWD/stalematewinboard.cpp \
     $$PWD/synoboard.cpp \
+    $$PWD/torishogiboard.cpp \
     $$PWD/westernboard.cpp \
     $$PWD/square.cpp \
     $$PWD/standardboard.cpp \
@@ -92,10 +94,12 @@ HEADERS += $$PWD/board.h \
     $$PWD/ordamirrorboard.h \
     $$PWD/pawnbackboard.h \
     $$PWD/pawnsidewaysboard.h \
+    $$PWD/pawnsinglestepboard.h \
     $$PWD/piece.h \
     $$PWD/shinobiboard.h \
     $$PWD/stalematewinboard.h \
     $$PWD/synoboard.h \
+    $$PWD/torishogiboard.h \
     $$PWD/westernboard.h \
     $$PWD/square.h \
     $$PWD/standardboard.h \

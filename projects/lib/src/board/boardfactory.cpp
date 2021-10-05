@@ -72,6 +72,7 @@
 #include "oukboard.h"
 #include "pawnbackboard.h"
 #include "pawnsidewaysboard.h"
+#include "pawnsinglestepboard.h"
 #include "placementboard.h"
 #include "pocketknightboard.h"
 #include "racingkingsboard.h"
@@ -85,6 +86,7 @@
 #include "stalematewinboard.h"
 #include "synoboard.h"
 #include "suicideboard.h"
+#include "torishogiboard.h"
 #include "threekingsboard.h"
 #include "twokingseachboard.h"
 
@@ -156,6 +158,7 @@ REGISTER_BOARD(OrdaBoard, "orda")
 REGISTER_BOARD(OrdamirrorBoard,"ordamirror")
 REGISTER_BOARD(PawnbackBoard, "pawnback")
 REGISTER_BOARD(PawnsidewaysBoard, "pawnsideways")
+REGISTER_BOARD(PawnsinglestepBoard, "pawnsinglestep")
 REGISTER_BOARD(PlacementBoard, "placement")
 REGISTER_BOARD(PocketKnightBoard, "pocketknight")
 REGISTER_BOARD(RacingKingsBoard, "racingkings")
@@ -173,6 +176,7 @@ REGISTER_BOARD(StandardBoard, "standard")
 REGISTER_BOARD(SuicideBoard, "suicide")
 REGISTER_BOARD(SuperAndernachBoard, "superandernach")
 REGISTER_BOARD(SynoBoard, "synochess")
+REGISTER_BOARD(ToriShogiBoard, "torishogi")
 REGISTER_BOARD(ThreeKingsBoard, "threekings")
 REGISTER_BOARD(TicTacToeBoard, "tictactoe")
 REGISTER_BOARD(TwoKingsEachBoard, "twokings")
