@@ -81,6 +81,7 @@
 #include "shatranjboard.h"
 #include "shinobiboard.h"
 #include "shogiboard.h"
+#include "shogunboard.h"
 #include "sittuyinboard.h"
 #include "standardboard.h"
 #include "stalematewinboard.h"
@@ -167,6 +168,7 @@ REGISTER_BOARD(SeirawanBoard, "seirawan")
 REGISTER_BOARD(ShatranjBoard, "shatranj")
 REGISTER_BOARD(ShinobiBoard, "shinobi")
 REGISTER_BOARD(ShogiBoard, "shogi")
+REGISTER_BOARD(ShogunBoard, "shogun")
 REGISTER_BOARD(ShootBoard, "shoot")
 REGISTER_BOARD(SimplifiedGryphonBoard, "simplifiedgryphon")
 REGISTER_BOARD(stalematewinBoard, "stalematewin")
