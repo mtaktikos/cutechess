@@ -87,7 +87,7 @@ void TencubedBoard::generateMovesForPiece(QVarLengthArray< Move >& moves,
 		return;
 
 	Side side = sideToMove();
-	Side opp = side.opposite();
+
 	int sign = (side == Side::White) ? 1 : -1;
 	int rank = chessSquare(square).rank();
 
@@ -111,25 +111,6 @@ void TencubedBoard::generateMovesForPiece(QVarLengthArray< Move >& moves,
 					moves.append(Move(square, targetSquare));
 			}
 		}
-	}
-
-	//add optional promotions on eighth and ninth ranks
-	int rank7 = (side == Side::White) ? height() - 4 : 3;
-	int rank8 = rank7 + sign;
-
-	if (rank != rank7 && rank != rank8)
-		return;
-
-	for (const PawnStep& pStep: m_pawnSteps)
-	{
-		int targetSquare = square + pawnMoveOffset(pStep, sign);
-		Piece capture = pieceAt(targetSquare);
-		bool isCapture = capture.side() == opp
-				||  targetSquare == enpassantSquare();
-
-		if ((capture.isEmpty() && pStep.type == FreeStep)
-		||  (isCapture && pStep.type == CaptureStep))
-			addPromotions(square, targetSquare, moves);
 	}
 }
 
