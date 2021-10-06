@@ -422,7 +422,7 @@ GraphicsPiece* BoardScene::createPiece(const Chess::Piece& piece, QString varian
 	if (!piece.isValid() && !piece.isWall())
 		return nullptr;
 
-    bool rotated = (((variant == "shogi") || (variant == "torishogi")) && (flipped));
+    bool rotated = (((variant == "gorogoro") || (variant == "shogi") || (variant == "minishogi") || (variant == "torishogi")) && (flipped));
     //bool rotated = true;
 	return new GraphicsPiece(piece,
 				 s_squareSize,

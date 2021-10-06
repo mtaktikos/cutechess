@@ -99,7 +99,7 @@ void GraphicsBoard::paint(QPainter* painter,
 			  const QStyleOptionGraphicsItem* option,
 			  QWidget* widget)
 {
-    if ((m_variant == "shogi") || (m_variant == "torishogi") || (m_variant == "minishogi")) {
+    if ((m_variant == "gorogoro" || (m_variant == "shogi") || (m_variant == "torishogi") || (m_variant == "minishogi"))) {
 
         paintShogiBoard(painter,option,widget);
 

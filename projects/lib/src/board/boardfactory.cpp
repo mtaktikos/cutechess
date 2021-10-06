@@ -47,6 +47,7 @@
 #include "frcboard.h"
 #include "giveawayboard.h"
 #include "gothicboard.h"
+#include "gorogoroboard.h"
 #include "grandboard.h"
 #include "grasshopperboard.h"
 #include "gridboard.h"
@@ -136,6 +137,7 @@ REGISTER_BOARD(GiveawayBoard, "giveaway")
 REGISTER_BOARD(GomokuFreestyleBoard, "gomokufreestyle")
 REGISTER_BOARD(GomokuBoard, "gomoku")
 REGISTER_BOARD(GothicBoard, "gothic")
+REGISTER_BOARD(GorogoroBoard, "gorogoro")
 REGISTER_BOARD(GrandBoard, "grand")
 REGISTER_BOARD(GrasshopperBoard,"grasshopper")
 REGISTER_BOARD(GridBoard, "grid")

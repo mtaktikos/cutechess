@@ -4,6 +4,7 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/centaurboard.cpp \
     $$PWD/chaturangaboard.cpp \
     $$PWD/empireboard.cpp \
+    $$PWD/gorogoroboard.cpp \
     $$PWD/grasshopperboard.cpp \
     $$PWD/nightriderboard.cpp \
     $$PWD/opulentboard.cpp \
@@ -92,6 +93,7 @@ HEADERS += $$PWD/board.h \
     $$PWD/centaurboard.h \
     $$PWD/chaturangaboard.h \
     $$PWD/empireboard.h \
+    $$PWD/gorogoroboard.h \
     $$PWD/grasshopperboard.h \
     $$PWD/move.h \
     $$PWD/nightriderboard.h \
