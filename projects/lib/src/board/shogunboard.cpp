@@ -297,24 +297,6 @@ void ShogunBoard::generateMovesForPiece(QVarLengthArray< Move >& moves,
 
     QVarLengthArray<Move>  moves1;
 
-    /*
-     * 	if (square == 0)
-    {
-        const int size = arraySize();
-        for (int i = 0; i < size; i++)
-        {
-            Piece tmp = pieceAt(i);
-            if (!tmp.isEmpty())
-                continue;
-            if (pieceType == Pawn)
-            {
-                Square sq(chessSquare(i));
-                if (!pawnDropOkOnRank(sq.rank()))
-                    continue;
-            }
-            moves.append(Move(0, i, pieceType));
-        }
-    }*/
     Side side = sideToMove();
     if (square == 0)
     {

@@ -28,6 +28,7 @@
 #include "berolinaboard.h"
 #include "capablancaboard.h"
 #include "caparandomboard.h"
+#include "centaurboard.h"
 #include "chancellorboard.h"
 #include "chaturangaboard.h"
 #include "checklessboard.h"
@@ -69,6 +70,7 @@
 #include "nightriderboard.h"
 #include "ordaboard.h"
 #include "ordamirrorboard.h"
+#include "opulentboard.h"
 #include "oukboard.h"
 #include "pawnbackboard.h"
 #include "pawnsidewaysboard.h"
@@ -108,6 +110,7 @@ REGISTER_BOARD(BerolinaBoard, "berolina")
 REGISTER_BOARD(OukBoard, "cambodian")
 REGISTER_BOARD(CapablancaBoard, "capablanca")
 REGISTER_BOARD(CaparandomBoard, "caparandom")
+REGISTER_BOARD(CentaurBoard, "centaur")
 REGISTER_BOARD(ConnectBoard, "cfour")
 REGISTER_BOARD(ChancellorBoard, "chancellor")
 REGISTER_BOARD(ChangeOverBoard, "changeover")
@@ -157,6 +160,7 @@ REGISTER_BOARD(NewZealandBoard, "newzealand")
 REGISTER_BOARD(NightriderBoard, "nightrider")
 REGISTER_BOARD(OrdaBoard, "orda")
 REGISTER_BOARD(OrdamirrorBoard,"ordamirror")
+REGISTER_BOARD(OpulentBoard, "opulent")
 REGISTER_BOARD(PawnbackBoard, "pawnback")
 REGISTER_BOARD(PawnsidewaysBoard, "pawnsideways")
 REGISTER_BOARD(PawnsinglestepBoard, "pawnsinglestep")

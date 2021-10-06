@@ -1,10 +1,12 @@
 DEPENDPATH += $$PWD
 SOURCES += $$PWD/board.cpp \
     $$PWD/atomarboard.cpp \
+    $$PWD/centaurboard.cpp \
     $$PWD/chaturangaboard.cpp \
     $$PWD/empireboard.cpp \
     $$PWD/grasshopperboard.cpp \
     $$PWD/nightriderboard.cpp \
+    $$PWD/opulentboard.cpp \
     $$PWD/ordaboard.cpp \
     $$PWD/ordamirrorboard.cpp \
     $$PWD/pawnbackboard.cpp \
@@ -86,11 +88,13 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/syzygytablebase.cpp
 HEADERS += $$PWD/board.h \
     $$PWD/atomarboard.h \
+    $$PWD/centaurboard.h \
     $$PWD/chaturangaboard.h \
     $$PWD/empireboard.h \
     $$PWD/grasshopperboard.h \
     $$PWD/move.h \
     $$PWD/nightriderboard.h \
+    $$PWD/opulentboard.h \
     $$PWD/ordaboard.h \
     $$PWD/ordamirrorboard.h \
     $$PWD/pawnbackboard.h \
