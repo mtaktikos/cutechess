@@ -89,6 +89,7 @@
 #include "stalematewinboard.h"
 #include "synoboard.h"
 #include "suicideboard.h"
+#include "tencubedboard.h"
 #include "torishogiboard.h"
 #include "threekingsboard.h"
 #include "twokingseachboard.h"
@@ -182,6 +183,7 @@ REGISTER_BOARD(StandardBoard, "standard")
 REGISTER_BOARD(SuicideBoard, "suicide")
 REGISTER_BOARD(SuperAndernachBoard, "superandernach")
 REGISTER_BOARD(SynoBoard, "synochess")
+REGISTER_BOARD(TencubedBoard, "tencubed")
 REGISTER_BOARD(ToriShogiBoard, "torishogi")
 REGISTER_BOARD(ThreeKingsBoard, "threekings")
 REGISTER_BOARD(TicTacToeBoard, "tictactoe")
