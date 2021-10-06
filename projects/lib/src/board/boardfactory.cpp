@@ -69,6 +69,7 @@
 #include "minishogiboard.h"
 #include "modernboard.h"
 #include "nightriderboard.h"
+#include "okisakishogiboard.h"
 #include "ordaboard.h"
 #include "ordamirrorboard.h"
 #include "opulentboard.h"
@@ -161,6 +162,7 @@ REGISTER_BOARD(MiniShogiBoard, "minishogi")
 REGISTER_BOARD(ModernBoard, "modern")
 REGISTER_BOARD(NewZealandBoard, "newzealand")
 REGISTER_BOARD(NightriderBoard, "nightrider")
+REGISTER_BOARD(OkisakiShogiBoard, "okisakishogi");
 REGISTER_BOARD(OrdaBoard, "orda")
 REGISTER_BOARD(OrdamirrorBoard,"ordamirror")
 REGISTER_BOARD(OpulentBoard, "opulent")
