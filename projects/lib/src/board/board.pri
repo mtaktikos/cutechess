@@ -6,6 +6,7 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/empireboard.cpp \
     $$PWD/gorogoroboard.cpp \
     $$PWD/grasshopperboard.cpp \
+    $$PWD/mayanboard.cpp \
     $$PWD/nightriderboard.cpp \
     $$PWD/okisakishogiboard.cpp \
     $$PWD/opulentboard.cpp \
@@ -96,6 +97,7 @@ HEADERS += $$PWD/board.h \
     $$PWD/empireboard.h \
     $$PWD/gorogoroboard.h \
     $$PWD/grasshopperboard.h \
+    $$PWD/mayanboard.h \
     $$PWD/move.h \
     $$PWD/nightriderboard.h \
     $$PWD/okisakishogiboard.h \
