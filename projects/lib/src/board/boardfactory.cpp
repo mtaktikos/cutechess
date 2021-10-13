@@ -26,6 +26,7 @@
 #include "atomarboard.h"
 #include "atomicboard.h"
 #include "berolinaboard.h"
+#include "breakthroughboard.h"
 #include "capablancaboard.h"
 #include "caparandomboard.h"
 #include "centaurboard.h"
@@ -111,6 +112,7 @@ REGISTER_BOARD(AseanBoard, "asean")
 REGISTER_BOARD(AtomarBoard, "atomar")
 REGISTER_BOARD(AtomicBoard, "atomic")
 REGISTER_BOARD(BerolinaBoard, "berolina")
+REGISTER_BOARD(BreakthroughBoard, "breakthrough")
 REGISTER_BOARD(OukBoard, "cambodian")
 REGISTER_BOARD(CapablancaBoard, "capablanca")
 REGISTER_BOARD(CaparandomBoard, "caparandom")

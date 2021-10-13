@@ -53,6 +53,7 @@ class LIB_EXPORT MayanBoard : public WesternBoard
 		{
             Offering = King + 1,
             Centaur,
+            Archbishop,
             Quetzal
 		};
 		// Inherited from WesternBoard

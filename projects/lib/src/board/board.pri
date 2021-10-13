@@ -1,6 +1,7 @@
 DEPENDPATH += $$PWD
 SOURCES += $$PWD/board.cpp \
     $$PWD/atomarboard.cpp \
+    $$PWD/breakthroughboard.cpp \
     $$PWD/centaurboard.cpp \
     $$PWD/chaturangaboard.cpp \
     $$PWD/empireboard.cpp \
@@ -92,6 +93,7 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/syzygytablebase.cpp
 HEADERS += $$PWD/board.h \
     $$PWD/atomarboard.h \
+    $$PWD/breakthroughboard.h \
     $$PWD/centaurboard.h \
     $$PWD/chaturangaboard.h \
     $$PWD/empireboard.h \

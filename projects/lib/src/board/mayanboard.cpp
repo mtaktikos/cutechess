@@ -29,6 +29,7 @@ MayanBoard::MayanBoard()
     setPieceType(Bishop, tr("bishop"), "B", CraneMovement, "B");
     setPieceType(Centaur, tr("centaur"), "E", KnightMovement|FerzMovement|WazirMovement , "M");
     setPieceType(Offering, tr("offering"), "O", 0 , "F");
+    setPieceType(Archbishop, tr("archbishop"), "A", KnightMovement | BishopMovement, "A");
     setPieceType(Pawn, tr("pawn"), "P", SoldierMovement, "P");
     setPieceType(Knight, tr("knight"), "J", KnightMovement, "N");
 }
@@ -266,6 +267,10 @@ void MayanBoard::generateMovesForPiece(QVarLengthArray<Move>& moves,
     if (pieceType == Knight || pieceType == Rook) {
         WesternBoard::generateMovesForPiece(moves,pieceType,square);
     }
+    if (pieceType == Archbishop) {
+        generateSlidingMoves(square,m_ferzOffsets,moves);
+        WesternBoard::generateMovesForPiece(moves,Knight,square);
+    }
     if (pieceType == Pawn) {
         generatePawnMoves(square,moves);
     }
@@ -300,8 +305,6 @@ void MayanBoard::generateMovesForPiece(QVarLengthArray<Move>& moves,
                 else
                 {
                     obstacle++;
-                    if(obstacle == 1 && capture.type() == Quetzal)
-                        break;
                     if(obstacle == 2 && capture.side() != side)
                     {
                         // moves.append(Move(sourceSquare, targetSquare));
@@ -336,8 +339,6 @@ void MayanBoard::generateMovesForPiece(QVarLengthArray<Move>& moves,
                 else
                 {
                     obstacle++;
-                    if(obstacle == 1 && capture.type() == Quetzal)
-                        break;
                     if(obstacle == 2 && capture.side() != side)
                     {
                         // moves.append(Move(sourceSquare, targetSquare));
