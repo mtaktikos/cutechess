@@ -885,6 +885,12 @@ bool ShogiBoard::inCheck(Side side, int square) const
 	return false;
 }
 
+int ShogiBoard::kingSquare(Side side) const
+{
+    Q_ASSERT(!side.isNull());
+    return m_kingSquare[side];
+}
+
 
 Result ShogiBoard::impassePointRule(int points, int pieces) const
 {

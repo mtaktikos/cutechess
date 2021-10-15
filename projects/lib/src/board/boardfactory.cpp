@@ -76,6 +76,7 @@
 #include "ordamirrorboard.h"
 #include "opulentboard.h"
 #include "oukboard.h"
+#include "pandemoniumboard.h"
 #include "pawnbackboard.h"
 #include "pawnsidewaysboard.h"
 #include "pawnsinglestepboard.h"
@@ -170,6 +171,7 @@ REGISTER_BOARD(OkisakiShogiBoard, "okisakishogi");
 REGISTER_BOARD(OrdaBoard, "orda")
 REGISTER_BOARD(OrdamirrorBoard,"ordamirror")
 REGISTER_BOARD(OpulentBoard, "opulent")
+REGISTER_BOARD(PandemoniumBoard, "pandemonium")
 REGISTER_BOARD(PawnbackBoard, "pawnback")
 REGISTER_BOARD(PawnsidewaysBoard, "pawnsideways")
 REGISTER_BOARD(PawnsinglestepBoard, "pawnsinglestep")

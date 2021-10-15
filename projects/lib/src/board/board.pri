@@ -13,6 +13,7 @@ SOURCES += $$PWD/board.cpp \
     $$PWD/opulentboard.cpp \
     $$PWD/ordaboard.cpp \
     $$PWD/ordamirrorboard.cpp \
+    $$PWD/pandemoniumboard.cpp \
     $$PWD/pawnbackboard.cpp \
     $$PWD/pawnsidewaysboard.cpp \
     $$PWD/pawnsinglestepboard.cpp \
@@ -106,6 +107,7 @@ HEADERS += $$PWD/board.h \
     $$PWD/opulentboard.h \
     $$PWD/ordaboard.h \
     $$PWD/ordamirrorboard.h \
+    $$PWD/pandemoniumboard.h \
     $$PWD/pawnbackboard.h \
     $$PWD/pawnsidewaysboard.h \
     $$PWD/pawnsinglestepboard.h \

@@ -134,6 +134,7 @@ class LIB_EXPORT ShogiBoard : public Board
 		/*! Movement mask for Gold General moves. */
 		static const unsigned GoldMovement = 512;
 
+        virtual int kingSquare(Side side) const;
 		/*!
 		 * Returns promoted piece type corresponding to normal \a type.
 		 */
